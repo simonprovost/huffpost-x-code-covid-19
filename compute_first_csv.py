@@ -14,7 +14,7 @@ if len(sys.argv) < 1:
     
 ### Here we will read our CSV briefly previously talked about. With the name (see run.sh), the separator (can be handled via the variables part) and the engine do not care about that one.
 print('read csv...')
-usersDf = pd.read_csv('data_first_csv.csv', sep=separator, engine='python')
+usersDf = pd.read_csv('data_tests.csv', sep=separator, engine='python')
 
 ### Here we will trunc our dataframe to the 01 August.
 ## First of all we get the index on the dataframe where is the august 1.

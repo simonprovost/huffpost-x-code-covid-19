@@ -19,7 +19,7 @@ if len(sys.argv) < 1:
     
 ### Here we will read our CSV briefly previously talked about. With the name (see run.sh), the separator (can be handled via the variables part) and the engine do not care about that one.
 print('read csv...')
-usersDf = pd.read_csv('data_second_csv.csv', sep=separator, engine='python')
+usersDf = pd.read_csv('data_hosp.csv', sep=separator, engine='python')
 
 ### Here we will create a new dataframe from the previous one but we will only accept rows where the column "sexe" is value is "0".
 print('compute sexe...')
