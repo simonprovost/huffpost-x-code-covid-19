@@ -21,17 +21,17 @@ if len(sys.argv) < 1:
 print('read csv...')
 usersDf = pd.read_csv('data_hosp.csv', sep=separator, engine='python')
 
+idx = usersDf.index[usersDf['jour'] == '2020-08-01'].tolist()
+new = usersDf.iloc[idx[0]:]
+
 ### Here we will create a new dataframe from the previous one but we will only accept rows where the column "sexe" is value is "0".
 print('compute sexe...')
-new = usersDf.loc[usersDf['sexe'].isin(['0'])]
+new = new.loc[new['sexe'].isin(['0'])]
 
 ### here we will filter, so more precisely we will drop some column to extract one of them. Refer you to the variable part.
 ## Do not care about axis=1.
 print('filtering columns...')
 final = new.filter(filterColumn, axis=1)
-
-idx = final.index[final['jour'] == '2020-08-01'].tolist()
-final = final.iloc[idx[0]:]
 
 ### Here we will create our final csv with the path+name (arg 1 given to this script).
 print('write output...')
